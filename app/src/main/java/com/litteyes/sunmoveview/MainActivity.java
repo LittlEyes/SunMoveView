@@ -2,6 +2,7 @@ package com.litteyes.sunmoveview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.litteyes.sunmoveview.view.SunProgressBar;
 
@@ -17,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
         bar.post(new Runnable() {
             @Override
             public void run() {
+                bar.startAnimator(0, 1, 1500);
+            }
+        });
+        bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 bar.startAnimator(0, 1, 1500);
             }
         });
